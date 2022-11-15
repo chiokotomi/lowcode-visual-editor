@@ -1,6 +1,6 @@
-# low-code-editor
+# lowcode-visual-editor
 
-This template should help get you started developing with Vue 3 in Vite.
+Used for personal learning. Based on Vue3 Pinia and Vite.
 
 ## Recommended IDE Setup
 
