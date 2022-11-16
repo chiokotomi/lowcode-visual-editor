@@ -19,10 +19,14 @@ const blocks = computed({
             if (!item.id) {
                 const id = new Date().getTime();
                 newWidgetIds.push(id);
+                let newProps = {}
+                widgetConfig[item].propsEditor.forEach((item, ) => {
+                    newProps[item.prop] = item.defaultValue;
+                });
                 pageConfig.widgetPropsMap[id] = {
                     id,
                     name: widgetConfig[item].name,
-                    props: {...widgetConfig[item].props},
+                    props: {...newProps}
                 };
                 visualEditor.$patch({
                     selectId: id,

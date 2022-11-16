@@ -1,0 +1,70 @@
+{
+    "name": "veButton",
+    "type": "baseWidgets",
+    "label": "按钮组件",
+    "props": {
+        "text": "按钮",
+        "type": "primary",
+        "size": "normal"
+    },
+    "propsEditor": [
+        {
+          "prop": "text",
+          "type": "input",
+          "label": "按钮文字",
+          "defaultValue": "按钮"
+        },
+        {
+          "prop": "type",
+          "type": "select",
+          "label": "按钮类型",
+          "defaultValue": "primary",
+          "options": [
+            {
+              "label": "主要按钮",
+              "value": "primary"
+            },
+            {
+              "label": "成功按钮",
+              "value": "success"
+            },
+            {
+              "label": "默认按钮",
+              "value": "default"
+            },
+            {
+              "label": "警告按钮",
+              "value": "warning"
+            },
+            {
+              "label": "危险按钮",
+              "value": "danger"
+            }
+          ]
+        },
+        {
+          "prop": "size",
+          "type": "select",
+          "label": "图片大小",
+          "defaultValue": "large",
+          "options": [
+            {
+              "label": "大型",
+              "value": "large"
+            },
+            {
+              "label": "普通",
+              "value": "normal"
+            },
+            {
+              "label": "小型",
+              "value": "small"
+            },
+            {
+              "label": "迷你",
+              "value": "mini"
+            }
+          ]
+        }
+    ]
+}

@@ -25,11 +25,11 @@ const labelWidth = "95px";
                     v-model="widgetCurrentProps[propsEditorItem.prop]"></ElInput>
                 <ElInputNumber v-if="propsEditorItem.type === 'inputNumber'" :step="10"
                     v-model="widgetCurrentProps[propsEditorItem.prop]"></ElInputNumber>
-                <!-- <ElSelect v-if="propsEditorItem.type === 'select'" v-model="widgetCurrentProps[propsEditorItem.props]">
+                <ElSelect v-if="propsEditorItem.type === 'select'" v-model="widgetCurrentProps[propsEditorItem.prop]">
                     <template v-for="option in propsEditorItem.options" :key="option.label">
                         <ElOption :label="option.label" :value="option.value"></ElOption>
                     </template>
-                </ElSelect> -->
+                </ElSelect>
                 <!-- <ElUpload v-if="propsEditorItem.type === 'uploadImage'"
                     action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
                     :show-file-list="false"

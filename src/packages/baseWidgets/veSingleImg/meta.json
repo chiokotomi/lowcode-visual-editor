@@ -12,19 +12,19 @@
           "prop": "width",
           "type": "inputNumber",
           "label": "图片宽度",
-          "defaultValue": 100
+          "defaultValue": 360
         },
         {
           "prop": "height",
           "type": "inputNumber",
           "label": "图片高度",
-          "defaultValue": 100
+          "defaultValue": 280
         },
         {
           "prop": "src",
           "type": "input",
           "label": "图片地址",
-          "defaultValue": ""
+          "defaultValue": "https://img.yzcdn.cn/vant/cat.jpeg"
         }
     ]
 }

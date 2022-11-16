@@ -1,0 +1,58 @@
+{
+    "name": "veCard",
+    "type": "moduleWidgets",
+    "label": "商品卡片",
+    "props": {
+        "num": "2",
+        "tag": "标签",
+        "price": "2.00",
+        "desc": "商品描述",
+        "title": "商品标题",
+        "thumb": "https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg",
+        "originPrice": "10.00"
+    },
+    "propsEditor": [
+      {
+        "prop": "title",
+        "type": "input",
+        "label": "商品名称",
+        "defaultValue": "商品名称"
+      },
+      {
+        "prop": "desc",
+        "type": "input",
+        "label": "商品描述",
+        "defaultValue": "商品描述"
+      },
+      {
+        "prop": "tag",
+        "type": "input",
+        "label": "标签",
+        "defaultValue": "标签"
+      },
+      {
+        "prop": "thumb",
+        "type": "input",
+        "label": "展示图片",
+        "defaultValue": "https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg"
+      },
+      {
+        "prop": "price",
+        "type": "input",
+        "label": "商品价格",
+        "defaultValue": "2.00"
+      },
+      {
+        "prop": "origin-price",
+        "type": "input",
+        "label": "原来价格",
+        "defaultValue": "10.00"
+      },
+      {
+        "prop": "num",
+        "type": "input",
+        "label": "商品数量",
+        "defaultValue": "2"
+      }
+    ]
+}
