@@ -1,0 +1,33 @@
+{
+    "name": "veSearch",
+    "type": "customWidgets",
+    "label": "搜索组件",
+    "props": {
+        "shape": "round",
+        "background": "#ffffff"
+    },
+    "propsEditor": [
+        {
+            "prop": "shape",
+            "type": "select",
+            "label": "形状",
+            "defaultValue": "round",
+            "options": [
+                {
+                    "label": "圆形",
+                    "value": "round"
+                },
+                {
+                    "label": "方形",
+                    "value": "square"
+                }
+            ]
+        },
+        {
+            "prop": "background",
+            "type": "input",
+            "label": "背景色",
+            "defaultValue": "#ffffff"
+        }
+    ]
+}
