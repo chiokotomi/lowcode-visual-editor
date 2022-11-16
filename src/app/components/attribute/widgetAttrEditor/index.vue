@@ -15,7 +15,7 @@ const labelWidth = "95px";
 
 <template>
 <div class="visual-editor-attribute-widget">
-    <ELForm labelPosition="left">
+    <ElForm labelPosition="left">
         <ElFormItem label="组件实例ID" :labelWidth="labelWidth">
             {{visualEditor.selectId}}
         </ElFormItem>
@@ -39,7 +39,7 @@ const labelWidth = "95px";
                 </ElUpload> -->
             </ElFormItem>
         </template>
-    </ELForm>
+    </ElForm>
 </div>
 </template>
 

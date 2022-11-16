@@ -54,13 +54,13 @@ const activeTabName = ref('baseWidgets');
                     item-key="name"
                 >
                     <template #item="{element}">
-                        <div class="border border-blue-400 mb-4 relative cursor-move">
+                        <div class="border border-blue-400 mb-4 relative cursor-move overflow-hidden">
                             <div class="w-20 bg-blue-400 text-center absolute z-1 text-sm"
                                 :style="{color: 'white'}">
                                 {{widgetConfig[element].label}}</div>
                             <div class="text-center my-2 pointer-events-none">
                                 <component :is="`${element}`"
-                                    v-bind="widgetConfig[element].props"></component>
+                                    v-bind="widgetConfig[element].props" class="flex justify-center"></component>
                             </div>
                         </div>
                     </template>

@@ -60,4 +60,9 @@ body {
   padding-bottom: 0;
 }
 
+// fix van-image styl
+#app .van-image {
+  display: block;
+}
+
 </style>
