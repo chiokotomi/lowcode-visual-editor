@@ -8,7 +8,7 @@ export default defineStore('pageConfig', {
             widgetIds: [],
             widgetPropsMap: {},
             height: 600,
-            bgColor: '409EFF',
+            bgColor: '#ffffff',
         }
     },
     // actions,

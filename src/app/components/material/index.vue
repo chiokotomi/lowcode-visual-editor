@@ -1,8 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import draggable from 'vuedraggable';
 import useStore from 'app/stores';
-import WidgetPreview from 'app/components/common/WidgetPreview';
 import {
     Document,
     Files,
@@ -11,30 +10,29 @@ import {
 
 const { widgetConfig } = useStore();
 
-
 const tabs = [
     {
         name: 'baseWidgets',
         label: '基础组件',
         icon: Document,
+        widgets: widgetConfig.baseWidgetsArr,
         // TODO: 按照顺序需要显示的组件map array
-        widgets: ['veButton', 'veImage'].map(name => widgetConfig[name]),
     },
     {
         name: 'moduleWidgets',
         label: '模块组件',
         icon: Files,
-        widgets: [],
+        widgets: widgetConfig.moduleWidgetsArr,
     },
     {
         name: 'customWidgets',
         label: '自定义组件',
         icon: SetUp,
-        widgets: [],
+        widgets: widgetConfig.customWidgetsArr,
     }
 ];
 
-const activeTabName = ref(tabs[0].name);
+const activeTabName = ref('baseWidgets');
 
 
 </script>
@@ -59,9 +57,10 @@ const activeTabName = ref(tabs[0].name);
                         <div class="border border-blue-400 mb-4 relative cursor-move">
                             <div class="w-20 bg-blue-400 text-center absolute z-1 text-sm"
                                 :style="{color: 'white'}">
-                                {{element.label}}</div>
+                                {{widgetConfig[element].label}}</div>
                             <div class="text-center my-2 pointer-events-none">
-                                <WidgetPreview :element={element} />
+                                <component :is="`${element}`"
+                                    v-bind="widgetConfig[element].props"></component>
                             </div>
                         </div>
                     </template>

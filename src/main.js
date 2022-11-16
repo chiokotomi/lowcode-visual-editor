@@ -8,17 +8,21 @@ import { Lazyload } from 'vant';
 // import '@vant/touch-emulator';
 import 'vant/lib/index.css';
 
+import components from './packages';
 
 const store = createPinia();
 const app = createApp({
     template:  `<VisualEditor :className="'custom-classname'"/>`
 });
-
 const params = {
     // theme,
     title: '页面标题',
-    widgetConfig: [],
-    defaultPropEditor: []
+    // 可使用组件map
+    widgetConfigMap: components,
+    // 默认的页面实例数据
+    pageConfig: {
+        height: 500,
+    }, 
 };
 
 

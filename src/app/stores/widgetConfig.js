@@ -1,12 +1,13 @@
 
 import { defineStore } from 'pinia';
-import baseWidgets from '@/packages/baseWidgets';
 
-export default defineStore('widgetConfig', {
+export default (initializData) => defineStore('widgetConfig', {
     state: () => {
         return {
-            ...baseWidgets,
+            baseWidgetsArr: [],
+            moduleWidgetsArr: [],
+            customWidgetsArr: [],
+            ...initializData,
         }
     },
-    // actions,
 });

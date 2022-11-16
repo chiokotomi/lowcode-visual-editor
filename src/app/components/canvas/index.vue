@@ -2,7 +2,6 @@
 import { ref, computed } from 'vue';
 import draggable from 'vuedraggable';
 import useStore from 'app/stores';
-import WidgetRender from 'app/components/common/WidgetRender';
 
 
 const { pageConfig, widgetConfig, visualEditor } = useStore();
@@ -10,32 +9,40 @@ const { pageConfig, widgetConfig, visualEditor } = useStore();
 const blocks = computed({
     get: () => {
         return pageConfig.widgetIds.map((widgetId) => {
-            return {
-                ...widgetConfig[pageConfig.widgetPropsMap[widgetId].name],
-                ...pageConfig.widgetPropsMap[widgetId]
-            }
+            return pageConfig.widgetPropsMap[widgetId];
         });
     },
     set: (val) => {
         let newWidgetIds = [];
         val.map((item) => {
-            const id = item.id ? item.id : new Date().getTime();
-            newWidgetIds.push(id);
+            // 从左侧添加
             if (!item.id) {
+                const id = new Date().getTime();
+                newWidgetIds.push(id);
+                pageConfig.widgetPropsMap[id] = {
+                    id,
+                    name: widgetConfig[item].name,
+                    props: {...widgetConfig[item].props},
+                };
                 visualEditor.$patch({
                     selectId: id,
                     activeTabName: 'widgetAttr'
                 });
-            }
-            pageConfig.widgetPropsMap[id] = {
-                ...item,
-                id,
+            } else {
+                // 自己重排
+                newWidgetIds.push(item.id);
             }
         })
         pageConfig.widgetIds = newWidgetIds;
     }
 });
 
+const onBlockClick = id => {
+    visualEditor.$patch({
+        selectId: id,
+        activeTabName: 'widgetAttr'
+    });
+}
 </script>
 
 <template>
@@ -52,8 +59,10 @@ const blocks = computed({
             class="visual-editor-canvas-drag-area"
         >
             <template #item="{element}">
-                <div class="cursor-move" :class="{ 'is-selected': element.id === visualEditor.selectId }">
-                    <WidgetRender :element={element} class="pointer-events-none"/>
+                <div class="cursor-move" @click="onBlockClick(element.id)"
+                    :class="{ 'is-selected': element.id === visualEditor.selectId }">
+                    <component :is="`${element.name}`"
+                        v-bind="element.props" class="pointer-events-none overflow-hidden"></component>
                 </div>
             </template>
         </draggable>
