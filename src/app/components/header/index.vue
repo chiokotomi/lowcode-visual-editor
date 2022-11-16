@@ -22,8 +22,8 @@
             >保存</el-button>
         </el-col>
     </el-row>
-    <el-dialog v-model="dialogVisible" title="预览" width="600px">
-        <div class="mb-4">屏幕尺寸：360px * 600px</div>
+    <el-dialog v-model="dialogVisible" title="预览" width="600px" top="10px" class="dialog-preview">
+        <!-- <div class="mb-4">屏幕尺寸：360px * 600px</div> -->
         <div class="flex justify-center">
             <div class="flex justify-center rounded-3xl border-1 border-gray-500\/50"
                 :style="{width: '400px', height: '680px', padding: '40px 20px'}">
@@ -52,6 +52,7 @@ import {
     Delete,
 } from '@element-plus/icons-vue';
 import useStore from 'app/stores';
+import defaultPageJson from './defaultPage.json';
 // import { setLocalStorage } from 'app/common/utils/localStorage';
 
 const { pageConfig, visualEditor, widgetConfig } = useStore();
@@ -72,8 +73,8 @@ const tools = [
         title: '导入JSON',
         icon: Box,
         onClick: () => {
-            const jsonObj = {"widgetIds":[1668591549041],"widgetPropsMap":{"1668591549041":{"id":1668591549041,"name":"veSingleImg","props":{"width":360,"height":280,"src":"https://img.yzcdn.cn/vant/cat.jpeg"}}},"height":700,"bgColor":"#A43434"};
-
+            // const jsonObj = {"widgetIds":[1668591549041],"widgetPropsMap":{"1668591549041":{"id":1668591549041,"name":"veSingleImg","props":{"width":360,"height":280,"src":"https://dsfs.oppo.com/archives/202211/20221111081144636e3e1cdf74d.png"}}},"height":700,"bgColor":"#A43434"};
+            const jsonObj = defaultPageJson;
             pageConfig.$patch({
                 widgetIds: jsonObj.widgetIds,
                 widgetPropsMap: jsonObj.widgetPropsMap,
@@ -116,8 +117,6 @@ const tools = [
         icon: View,
         onClick: () => {
             dialogVisible.value = true;
-            // setLocalStorage('jsonData', JSON.stringify(''));
-            // window.open(location.href.replace('/#/', '/preview/#/'));
         }
     }
 ];

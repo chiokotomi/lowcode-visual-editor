@@ -64,5 +64,7 @@ body {
 #app .van-image {
   display: block;
 }
-
+.dialog-preview .el-dialog__header {
+  padding-top: 10px;
+}
 </style>

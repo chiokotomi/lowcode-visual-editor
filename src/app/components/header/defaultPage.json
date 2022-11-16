@@ -1,0 +1,84 @@
+{
+    "widgetIds": [
+        1668591549041,
+        1668606788907,
+        1668606790678,
+        1668606833471,
+        1668606793159,
+        1668606796938
+    ],
+    "widgetPropsMap": {
+        "1668591549041": {
+            "id": 1668591549041,
+            "name": "veSingleImg",
+            "props": {
+                "width": 360,
+                "height": 190,
+                "src": "https://dsfs.oppo.com/archives/202211/20221111081144636e3e1cdf74d.png"
+            }
+        },
+        "1668606788907": {
+            "id": 1668606788907,
+            "name": "veCard",
+            "props": {
+                "title": "商品名称",
+                "desc": "商品描述",
+                "tag": "标签",
+                "thumb": "https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg",
+                "price": "2.00",
+                "origin-price": "10.00",
+                "num": "2"
+            }
+        },
+        "1668606790678": {
+            "id": 1668606790678,
+            "name": "veCard",
+            "props": {
+                "title": "商品名称",
+                "desc": "商品描述",
+                "tag": "标签",
+                "thumb": "https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg",
+                "price": "2.00",
+                "origin-price": "10.00",
+                "num": "2"
+            }
+        },
+        "1668606793159": {
+            "id": 1668606793159,
+            "name": "veCard",
+            "props": {
+                "title": "商品名称",
+                "desc": "商品描述",
+                "tag": "标签",
+                "thumb": "https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg",
+                "price": "2.00",
+                "origin-price": "10.00",
+                "num": "2"
+            }
+        },
+        "1668606796938": {
+            "id": 1668606796938,
+            "name": "veButton",
+            "props": {
+                "text": "查看更多",
+                "type": "danger",
+                "size": "large"
+            }
+        },
+        "1668606833471": {
+            "id": 1668606833471,
+            "name": "veCard",
+            "props": {
+                "title": "商品名称",
+                "desc": "商品描述",
+                "tag": "标签",
+                "thumb": "https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg",
+                "price": "2.00",
+                "origin-price": "10.00",
+                "num": "2"
+            }
+        }
+    },
+    "height": 660,
+    "bgColor": "#EF4040"
+}

@@ -45,7 +45,7 @@
         {
           "prop": "size",
           "type": "select",
-          "label": "图片大小",
+          "label": "按钮大小",
           "defaultValue": "large",
           "options": [
             {
